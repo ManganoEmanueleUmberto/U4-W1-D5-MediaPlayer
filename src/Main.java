@@ -29,6 +29,7 @@ public class Main {
                     for (int i = 0; i < arrayMultimedia.length; i++) {
                         if (arrayMultimedia[i] == null) {
                             arrayMultimedia[i] = new Audio(title, duration, volume);
+                            System.out.println("\nAudio added");
                             break;
                         }
 
@@ -46,6 +47,7 @@ public class Main {
                     for (int i = 0; i < arrayMultimedia.length; i++) {
                         if (arrayMultimedia[i] == null) {
                             arrayMultimedia[i] = new Video(title, duration, brightness, volume);
+                            System.out.println("Video added");
                             break;
                         }
                     }
@@ -59,12 +61,13 @@ public class Main {
                     for (int i = 0; i < arrayMultimedia.length; i++) {
                         if (arrayMultimedia[i] == null) {
                             arrayMultimedia[i] = new Image(title, brightness);
+                            System.out.println("Image added");
                             break;
                         }
                     }
                     break;
                 case 4:
-                    System.out.println("       -----MENÚ----- \n\nPick the media you wish to play: ");
+                    System.out.println("       -----MENÚ----- \n\nPick the media you wish to play:  || 6 to go back4");
                     for (int i = 0; i < arrayMultimedia.length; i++) {
                         if (arrayMultimedia[i] != null) {
                             System.out.println(" " + (i + 1) + " " + arrayMultimedia[i].getTitle());
@@ -73,9 +76,16 @@ public class Main {
                     System.out.println(" \n 0 Exit");
                     choice = Integer.parseInt(sc.nextLine());
                     if (choice == 0) exit = true;
-                    else if (arrayMultimedia[choice - 1] instanceof Audio || arrayMultimedia[choice - 1] instanceof Video)
-                        arrayMultimedia[choice - 1].play();
-                    else arrayMultimedia[choice - 1].show();
+                    if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) {
+                        if (arrayMultimedia[choice - 1] instanceof Audio || arrayMultimedia[choice - 1] instanceof Video) {
+
+                            arrayMultimedia[choice - 1].play();
+                            break;
+                        } else {
+                            arrayMultimedia[choice - 1].show();
+                            break;
+                        }
+                    }
                     break;
                 case 0:
                     exit = true;
