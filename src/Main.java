@@ -10,7 +10,7 @@ public class Main {
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
         int choice = 0, choiceAdd = 0, duration = 0, volume = 0, brightness = 0;
-        String title = "";1
+        String title = "";
         Multimedia[] arrayMultimedia = new Multimedia[5];
 
         while (!exit) {
