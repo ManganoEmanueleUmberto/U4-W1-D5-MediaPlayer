@@ -1,15 +1,13 @@
 package entities;
 
-import interfaces.BrightnessRegulator;
-import interfaces.Playable;
-
-public class Video extends Multimedia implements Playable, BrightnessRegulator {
+public class Video extends Multimedia {
 
 
     public Video(String title, int duration, int brightness, int volume) {
         super(title, duration, brightness, volume);
     }
 
+    @Override
     public void play() {
         String stringVolume = "";
         String stringBrightness = "";
@@ -25,19 +23,10 @@ public class Video extends Multimedia implements Playable, BrightnessRegulator {
 
     }
 
-    public int turnUpVolume() {
-        return volume++;
+    @Override
+    public void show() {
+        System.out.println("It's NOT an image. USE .play instead");
     }
 
-    public int turnDownVolume() {
-        return volume--;
-    }
 
-    public int increaseBrightness() {
-        return brightness++;
-    }
-
-    public int decreaseBrightness() {
-        return brightness--;
-    }
 }

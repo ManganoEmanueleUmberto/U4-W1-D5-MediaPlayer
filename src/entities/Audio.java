@@ -1,12 +1,11 @@
 package entities;
 
-import interfaces.Playable;
-
-public class Audio extends Multimedia implements Playable {
+public class Audio extends Multimedia {
     public Audio(String title, int duration, int volume) {
         super(title, duration, volume);
     }
 
+    @Override
     public void play() {
         String stringVolume = "";
         for (int i = 0; i < volume; i++) {
@@ -19,11 +18,9 @@ public class Audio extends Multimedia implements Playable {
         }
     }
 
-    public int turnUpVolume() {
-        return volume++;
+    @Override
+    public void show() {
+        System.out.println("It's NOT an image. USE .play instead");
     }
 
-    public int turnDownVolume() {
-        return volume--;
-    }
 }
