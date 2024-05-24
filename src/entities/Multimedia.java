@@ -1,6 +1,9 @@
 package entities;
 
-public abstract class Multimedia {
+import interfaces.BrightnessRegulator;
+import interfaces.Playable;
+
+public abstract class Multimedia implements Playable, BrightnessRegulator {
     String title;
     int duration;
     int volume;

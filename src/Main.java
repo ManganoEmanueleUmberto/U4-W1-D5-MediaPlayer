@@ -10,14 +10,14 @@ public class Main {
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
         int choice = 0;
-        String title = "";
-        int duration = 0, volume = 0, indexAudio = 0;
         Audio audio1 = new Audio("Audio 1", 5, 30);
         Video video1 = new Video("Video 1", 1, 2, 5);
         Audio audio2 = new Audio("Audio 2", 5, 30);
         Video video2 = new Video("Video 2", 1, 2, 5);
         Image image1 = new Image("Image1", 10);
+
         Multimedia[] arrayMultimedia = {audio1, video1, audio2, video2, image1};
+
         while (!exit) {
 
 
