@@ -29,20 +29,23 @@ public abstract class Multimedia {
 
     public abstract void show();
 
-    public int turnUpVolume() {
-        return volume++;
+    public int turnUpVolume(int value) {
+        return volume + value;
     }
 
-    public int turnDownVolume() {
-        return volume--;
+    public int turnDownVolume(int value) {
+        return volume - value;
     }
 
-    public int increaseBrightness() {
-        return brightness++;
+    public int increaseBrightness(int value) {
+        return brightness + value;
     }
 
-    public int decreaseBrightness() {
-        return brightness--;
+    public int decreaseBrightness(int value) {
+        return brightness - value;
     }
 
+    public String getTitle() {
+        return title;
+    }
 }
